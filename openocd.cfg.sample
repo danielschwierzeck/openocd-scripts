@@ -1,0 +1,14 @@
+#source [find interface/xxx.cfg]
+#adapter_khz 0
+
+source [find target/danube.cfg]
+#source [find target/vrx200.cfg]
+
+source [find board/easy50712.cfg]
+#source [find board/easy80920.cfg]
+
+gdb_flash_program enable
+#gdb_flash_program disable
+gdb_memory_map enable
+#gdb_memory_map disable
+gdb_breakpoint_override hard

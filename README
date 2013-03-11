@@ -1,0 +1,18 @@
+Example usage:
+
+init project directory:
+$ mkdir $PROJECT_DIR
+$ cd $PROJECT_DIR
+$ cp $PATH_TO_THIS_GIT_TREE/openocd.cfg.sample openocd.cfg
+$ vi openocd.cfg (adapt to board)
+
+add symlinks to U-Boot builds for each board config:
+$ ln -s $UBOOT_BUILD_RAM easy80920_ram
+$ ln -s $UBOOT_BUILD_NOR easy80920_nor
+
+start OpenOCD with this git tree as additional search path
+$ openocd -s $PATH_TO_THIS_GIT_TREE
+
+load and boot a RAM U-Boot
+$ telnet localhost 4444
+> easy80920_ramboot
